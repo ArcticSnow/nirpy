@@ -23,6 +23,7 @@ wrap micmac function to extract profile 'mm3d vodka'. At least provide the metho
 import skimage as sk
 import rawpy
 import imageio
+import matplotlib.pyplot as plt
 
 raw = rawpy.imread('image.nef')
 rgb = raw.postprocess()
@@ -38,6 +39,12 @@ class micmac_nir():
 class nir(object):
     def __init__(self):
         self.fname = None
+        self.img_raw = None
+        self.img_rgb = None
+        self.img_v = None
+        self.img_calib = None
+
+    def plot_compare(self, im1, im2, cm=plt.cm.gray):
 
     def load_raw(self):
         '''
